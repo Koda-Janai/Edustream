@@ -5,7 +5,7 @@ workflows:
     max_build_duration: 40
     environment:
       xcode: "26.4"
-    scripts:
+    scripts: &pruebas_edustream
       - name: Validar catálogo e instalar dependencias
         script: |
           set -euo pipefail
@@ -82,3 +82,12 @@ workflows:
       - build/*.xcresult
       - build/pruebas-ios.log
       - firestore-debug.log
+  edustream-captura-lector:
+    name: Edustream · captura del lector
+    instance_type: mac_mini_m2
+    max_build_duration: 40
+    environment:
+      xcode: "26.4"
+    scripts: *pruebas_edustream
+    artifacts:
+      - build/capturas/04-lector.png
