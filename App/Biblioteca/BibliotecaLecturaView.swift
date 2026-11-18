@@ -30,6 +30,7 @@ struct BibliotecaLecturaView: View {
                         .font(.subheadline).foregroundStyle(.secondary)
                         .id("inicio")
                     Text(textoResaltado)
+                        .accessibilityIdentifier(narracion.fragmento == nil ? "texto-lector" : "texto-lector-resaltado")
                         .font(.system(.body, design: .serif))
                         .frame(maxWidth: .infinity, alignment: .leading)
 

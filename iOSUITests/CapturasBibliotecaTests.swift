@@ -25,6 +25,10 @@ final class CapturasBibliotecaTests: XCTestCase {
 
         let escuchar = app.buttons["Escuchar"].firstMatch
         XCTAssertTrue(escuchar.waitForExistence(timeout: 10))
+        escuchar.tap()
+        let resaltado = app.staticTexts["texto-lector-resaltado"].firstMatch
+        XCTAssertTrue(resaltado.waitForExistence(timeout: 15), "La narración debe resaltar el texto.")
+        XCTAssertTrue(app.buttons["Pausar"].exists, "El lector debe estar en reproducción.")
         capturar("04-lector")
 
         let perfil = app.tabBars.buttons["Perfil"].firstMatch
