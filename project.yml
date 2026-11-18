@@ -34,6 +34,16 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.0"
+  EdustreamUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [iOSUITests]
+    dependencies:
+      - target: Edustream
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
 schemes:
   Edustream:
     build:
@@ -45,3 +55,4 @@ schemes:
         EDUSTREAM_EMULADOR: "1"
       targets:
         - EdustreamTests
+        - EdustreamUITests

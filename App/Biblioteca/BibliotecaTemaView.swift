@@ -30,6 +30,7 @@ struct BibliotecaTemaView: View {
                     TarjetaTema(titulo: leccion.titulo, tema: leccion.tema,
                                 subtitulo: "\(leccion.nivel) · \(leccion.minutos) min")
                 }
+                .accessibilityIdentifier("leccion-\(leccion.id ?? "")")
             }
 
             NavigationLink("Intentar quiz") {

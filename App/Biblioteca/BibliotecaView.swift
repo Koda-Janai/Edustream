@@ -61,6 +61,7 @@ struct BibliotecaView: View {
                                 } label: {
                                     TarjetaTema(titulo: tema, tema: tema)
                                 }
+                                .accessibilityIdentifier("tema-\(tema)")
                             }
                         }
                         let destacadas = lecciones.filter(\.destacada)

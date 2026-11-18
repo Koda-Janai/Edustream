@@ -15,6 +15,7 @@ struct BibliotecaDetalleView: View {
                 NavigationLink("Leer o escuchar") {
                     BibliotecaLecturaView(leccion: leccion, firebase: firebase)
                 }
+                .accessibilityIdentifier("abrir-lector")
                 Text(leccion.ejemploVisual)
                     .font(.system(.body, design: .monospaced))
                     .padding(.vertical, 8)

@@ -53,7 +53,29 @@ workflows:
               -parallel-testing-enabled NO -resultBundlePath build/Edustream.xcresult \
               CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=-
           ' 2>&1 | tee build/pruebas-ios.log
+      - name: Exportar capturas del simulador
+        script: |
+          set -euo pipefail
+          mkdir -p build/capturas
+          xcrun xcresulttool export attachments --path build/Edustream.xcresult --output-path build/capturas
+          node <<'NODE'
+          const fs = require("node:fs");
+          const path = require("node:path");
+          const folder = "build/capturas";
+          const manifest = JSON.parse(fs.readFileSync(path.join(folder, "manifest.json"), "utf8"));
+          const names = ["01-inicio", "02-tema-series", "03-leccion", "04-lector", "05-perfil"];
+          for (const result of manifest) {
+            for (const attachment of result.attachments ?? []) {
+              const label = attachment.suggestedHumanReadableName ?? "";
+              const name = names.find(value => label.includes(value));
+              if (name && attachment.exportedFileName?.endsWith(".png")) {
+                fs.renameSync(path.join(folder, attachment.exportedFileName), path.join(folder, name + ".png"));
+              }
+            }
+          }
+          NODE
     artifacts:
+      - build/capturas/*.png
       - build/*.xcresult
       - build/pruebas-ios.log
       - firestore-debug.log
