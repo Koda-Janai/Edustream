@@ -30,6 +30,8 @@ final class BibliotecaNarracion: NSObject, ObservableObject {
             let mensaje = AVSpeechUtterance(string: texto)
             mensaje.voice = AVSpeechSynthesisVoice(language: idioma)
             lecturaActiva = ObjectIdentifier(mensaje)
+            fragmento = texto.range(of: #"\S+"#, options: .regularExpression)
+                .map { NSRange($0, in: texto) }
             estado = .reproduciendo
             sintetizador.speak(mensaje)
         case .reproduciendo:

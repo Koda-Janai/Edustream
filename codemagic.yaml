@@ -52,7 +52,7 @@ workflows:
               -configuration Debug -destination "id=$IOS_SIMULATOR_UDID" \
               -parallel-testing-enabled NO -resultBundlePath build/Edustream.xcresult \
               CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=-
-          ' 2>&1 | tee build/pruebas-ios.log
+          ' 2>&1 | tee build/pruebas-ios.log || printf '%s\n' "$?" > build/estado-pruebas.txt
       - name: Exportar capturas del simulador
         script: |
           set -euo pipefail
@@ -74,6 +74,9 @@ workflows:
             }
           }
           NODE
+          if [ -f build/estado-pruebas.txt ]; then
+            exit "$(cat build/estado-pruebas.txt)"
+          fi
     artifacts:
       - build/capturas/*.png
       - build/*.xcresult
