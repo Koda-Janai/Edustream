@@ -10,12 +10,7 @@ targets:
   Edustream:
     type: application
     platform: iOS
-    sources:
-      - path: App
-        excludes: [GoogleService-Info.plist]
-      - path: App/GoogleService-Info.plist
-        optional: true
-        buildPhase: resources
+    sources: [App]
     dependencies:
       - package: Firebase
         product: FirebaseCore
