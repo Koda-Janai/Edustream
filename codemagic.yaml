@@ -51,7 +51,7 @@ workflows:
             xcodebuild test -project Edustream.xcodeproj -scheme Edustream \
               -configuration Debug -destination "id=$IOS_SIMULATOR_UDID" \
               -parallel-testing-enabled NO -resultBundlePath build/Edustream.xcresult \
-              CODE_SIGNING_ALLOWED=NO
+              CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=-
           ' 2>&1 | tee build/pruebas-ios.log
     artifacts:
       - build/*.xcresult
