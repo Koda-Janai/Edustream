@@ -54,7 +54,11 @@ Para usar la app de forma manual contra el emulador, abre **Edit Scheme → Run 
 5. Con credenciales de aplicación predeterminadas autorizadas para escribir en ese proyecto, ejecuta `node Firebase/publicar.mjs` para ver el destino y `node Firebase/publicar.mjs --apply` para crear los documentos editoriales faltantes. El comando puede repetirse y conserva los documentos preexistentes. Revisa manualmente las lecciones existentes si necesitas aplicar una nueva revisión editorial. También puedes publicar los documentos de [lecciones.json](Firebase/lecciones.json) desde la consola usando su `id` como nombre del documento y excluyéndolo de los campos.
 6. Para probar el proyecto real, ejecuta Edustream con la variable del emulador desactivada. El catálogo procede de Firestore o de su caché. Los archivos editoriales quedan fuera del bundle. Las transacciones requieren conexión. La app ofrece reintentos y el quiz conserva localmente el identificador del envío pendiente entre aperturas.
 
-## Pruebas
+## Pruebas en Codemagic
+
+En [Codemagic](https://codemagic.io/app/6afd04fe29849db4c9eed0c9/settings), elige **Start new build**, la rama `main` y **Edustream · pruebas iOS**. El flujo usa el simulador con firma local y el proyecto emulado `demo-edustream`. [Resultado de la ejecución verificada](https://codemagic.io/app/6afd04fe29849db4c9eed0c9/build/6afd09abd133a39c4a12788d)
+
+## Pruebas locales
 
 ```sh
 node --test Tests/catalogo.test.cjs
@@ -70,6 +74,6 @@ npx firebase emulators:exec --project demo-edustream --only firestore "node --te
 
 En Xcode, con Auth y Firestore emulados, verifica el test del servicio Swift y luego recorre Inicio → tema → lección → lector → quiz. Comprueba búsqueda sin tildes, cambio de nivel, regreso sin voz en segundo plano, pausa y resaltado con caracteres Unicode, y restauración del fragmento más avanzado. Envía una respuesta con la red interrumpida, reabre la lección y verifica que el mismo intento sigue pendiente. Registra al invitado, vuelve a acceder con el mismo correo y verifica que se conserva su avance. Comprueba perfil, restablecimiento de contraseña, VoiceOver y texto grande.
 
-**Estado de verificación.** Pasaron 3 pruebas locales de catálogo y vista previa y 4 pruebas de transacciones y permisos en Firestore Emulator 1.22.0. También se aplicó el publicador dos veces al emulador: la primera creó 11 lecciones y la segunda conservó las 11 sin crear duplicados. La compilación, el XCTest del servicio Swift y la comparación visual siguen pendientes en macOS. No se cambiaron las reglas ni se publicó contenido en el proyecto Firebase real.
+**Estado de verificación.** Pasaron 3 pruebas locales de catálogo y vista previa y 4 pruebas de transacciones y permisos en Firestore Emulator 1.22.0. También se aplicó el publicador dos veces al emulador: la primera creó 11 lecciones y la segunda conservó las 11 sin crear duplicados. Codemagic compiló la app y ejecutó las 3 pruebas de catálogo, las 4 pruebas de Firestore y el XCTest del servicio Swift en un simulador de iPhone. La revisión manual de la interfaz y el audio sigue pendiente. No se cambiaron las reglas ni se publicó contenido en el proyecto Firebase real.
 
 **Decisiones de diseño.** Acceso por correo y perfil con nombre visible y correo. El prototipo visual se tradujo a componentes nativos con acentos por tema, iconos SF Symbols y diagramas textuales. Las portadas fotográficas, HEX y tipografía exactos requieren los recursos o valores de las capas de Figma y una comparación en iPhone.
