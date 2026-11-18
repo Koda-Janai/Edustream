@@ -1,0 +1,59 @@
+workflows:
+  edustream-ios-tests:
+    name: Edustream · pruebas iOS
+    instance_type: mac_mini_m2
+    max_build_duration: 40
+    environment:
+      xcode: "26.4"
+    scripts:
+      - name: Validar catálogo e instalar dependencias
+        script: |
+          set -euo pipefail
+          node --version
+          node --test Tests/catalogo.test.cjs
+          npm install --no-save --no-package-lock --no-audit --no-fund \
+            firebase@13.4.0 @firebase/rules-unit-testing@6.0.0 \
+            firebase-tools@15.36.0 firebase-admin@14.5.1
+      - name: Generar proyecto de Xcode
+        script: |
+          set -euo pipefail
+          command -v xcodegen >/dev/null || brew install xcodegen
+          xcodegen generate
+          xcodebuild -version
+      - name: Ejecutar Firestore y XCTest en simulador
+        script: |
+          set -euo pipefail
+          export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+          export PATH="$JAVA_HOME/bin:$PATH"
+          export METADATA_SERVER_DETECTION=none
+          mkdir -p build
+
+          IOS_SIMULATOR_UDID="$(xcrun simctl list devices available --json | node -e '
+            const { devices } = JSON.parse(require("node:fs").readFileSync(0, "utf8"));
+            const runtimes = Object.keys(devices).filter(id => id.includes(".iOS-"))
+              .sort((a, b) => b.localeCompare(a, "en", { numeric: true }));
+            for (const runtime of runtimes) {
+              const phone = devices[runtime].find(device => device.name.startsWith("iPhone"));
+              if (phone) {
+                console.log(phone.udid);
+                process.exit(0);
+              }
+            }
+            console.error("La imagen de Xcode no contiene un simulador iPhone disponible.");
+            process.exit(1);
+          ')"
+          export IOS_SIMULATOR_UDID
+          xcrun simctl bootstatus "$IOS_SIMULATOR_UDID" -b
+
+          npx --no-install firebase emulators:exec --only auth,firestore --project demo-edustream '
+            node --test Tests/firestore.test.mjs &&
+            node Firebase/publicar.mjs --emulador --apply &&
+            xcodebuild test -project Edustream.xcodeproj -scheme Edustream \
+              -configuration Debug -destination "id=$IOS_SIMULATOR_UDID" \
+              -parallel-testing-enabled NO -resultBundlePath build/Edustream.xcresult \
+              CODE_SIGNING_ALLOWED=NO
+          ' 2>&1 | tee build/pruebas-ios.log
+    artifacts:
+      - build/*.xcresult
+      - build/pruebas-ios.log
+      - firestore-debug.log
