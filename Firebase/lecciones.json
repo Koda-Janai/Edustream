@@ -1,0 +1,211 @@
+[
+  {
+    "id": "proporciones",
+    "titulo": "Proporciones y regla de tres",
+    "tema": "Matemática",
+    "area": "Matemáticas",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": true,
+    "texto": "Una razón expresa una comparación entre dos cantidades.\n\nSi tres cuadernos cuestan sesenta pesos, divide sesenta entre tres para obtener el precio unitario: veinte pesos. Multiplica ese precio por cinco y obtienes cien pesos. El método funciona si cada cuaderno cuesta lo mismo. Si se aplica un descuento por volumen, comprueba primero que la relación sigue siendo proporcional.\n\nComprueba el método con ocho cuadernos. Calcula primero el precio de uno y luego explica por qué duplicar la cantidad también duplica el costo cuando no hay descuentos.",
+    "ejemploVisual": "3 cuadernos → $60\n1 cuaderno  → $20\n5 cuadernos → $100",
+    "pregunta": "¿Cuánto cuestan seis cuadernos al mismo precio unitario?",
+    "opciones": [
+      "$90",
+      "$120",
+      "$180"
+    ],
+    "respuestaCorrecta": 1,
+    "explicacion": "Seis cuadernos a $20 cuestan $120."
+  },
+  {
+    "id": "velocidad",
+    "titulo": "Velocidad frente a aceleración",
+    "tema": "Física",
+    "area": "Ciencias",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "La velocidad indica cómo cambia la posición con el tiempo.\n\nLa aceleración indica cómo cambia la velocidad. Si una bicicleta avanza en línea recta a cinco metros por segundo de forma constante, tiene velocidad, pero su aceleración es cero. Si pasa de cinco a siete metros por segundo en dos segundos, su aceleración media es de un metro por segundo al cuadrado.\n\nImagina ahora que la bicicleta frena. Su velocidad todavía apunta hacia delante, pero su aceleración apunta en sentido contrario. Dibuja dos flechas para distinguirlas.",
+    "ejemploVisual": "Tiempo:    0 s   1 s   2 s\nVelocidad: 5     6     7 m/s",
+    "pregunta": "¿Qué magnitud es cero si la velocidad permanece constante?",
+    "opciones": [
+      "Velocidad",
+      "Distancia",
+      "Aceleración"
+    ],
+    "respuestaCorrecta": 2,
+    "explicacion": "Cuando la velocidad no cambia, la aceleración es cero."
+  },
+  {
+    "id": "mezclas",
+    "titulo": "Mezclas y sustancias puras",
+    "tema": "Química",
+    "area": "Ciencias",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "Una sustancia pura tiene composición química definida.\n\nUna mezcla combina sustancias en proporciones que pueden variar. Al disolver sal en agua se obtiene una mezcla homogénea, porque una muestra pequeña tiene un aspecto uniforme. Al evaporar el agua se puede recuperar la sal que estaba disuelta.\n\nCompara un vaso de agua con sal y otro con arena. Observa qué ocurre al dejar que reposen. El aspecto de la mezcla ayuda a identificar si sus componentes se distribuyen uniformemente.",
+    "ejemploVisual": "Agua + sal → solución\nSolución − agua evaporada → sal",
+    "pregunta": "¿Cómo se clasifica el agua con sal disuelta?",
+    "opciones": [
+      "Mezcla homogénea",
+      "Elemento",
+      "Compuesto puro"
+    ],
+    "respuestaCorrecta": 0,
+    "explicacion": "El agua y la sal conservan sus identidades químicas en la solución."
+  },
+  {
+    "id": "jerarquia",
+    "titulo": "Contraste y jerarquía visual",
+    "tema": "Arte",
+    "area": "Diseño",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": true,
+    "texto": "La jerarquía orienta el orden de lectura.\n\nUn título grande atrae la mirada primero. Un subtítulo más pequeño ayuda a entender el contexto. El espacio entre bloques indica qué elementos pertenecen al mismo grupo. Prueba observar un cartel a dos metros: si todo parece importante, reduce el énfasis de los elementos secundarios.\n\nCrea dos versiones de un aviso. En la primera usa el mismo tamaño en todo. En la segunda destaca la fecha y el título. Pídele a alguien que lea ambos durante tres segundos y compare qué recuerda.",
+    "ejemploVisual": "TÍTULO PRINCIPAL\n  Subtítulo\n    Información secundaria",
+    "pregunta": "¿Qué cambio ayuda a distinguir el título?",
+    "opciones": [
+      "Igualar tamaños",
+      "Reducir el contraste",
+      "Aumentar su tamaño respecto al cuerpo"
+    ],
+    "respuestaCorrecta": 2,
+    "explicacion": "Una diferencia de tamaño hace explícito el orden de lectura."
+  },
+  {
+    "id": "bucle",
+    "titulo": "Cómo funciona un bucle de juego",
+    "tema": "Videojuegos",
+    "area": "Programación",
+    "nivel": "Intermedio",
+    "minutos": 3,
+    "destacada": true,
+    "texto": "En un juego interactivo, cada iteración lee las entradas, actualiza el estado y dibuja el resultado.\n\nSi se presiona un botón, la entrada se registra primero. Después, la actualización cambia la posición del personaje. El dibujo toma esa posición y la muestra en pantalla. Separar las tres tareas facilita detectar errores y cambiar la interfaz.\n\nSigue el recorrido de una sola pulsación. Primero se registra el botón, después se calcula el salto y finalmente se dibuja la nueva posición. Si el dibujo falla, revisa qué estado llegó a esa etapa.",
+    "ejemploVisual": "Entrada → Estado → Dibujo\n     ↑                 ↓\n     └─────────────────┘",
+    "pregunta": "¿En qué fase se modifica la posición del personaje?",
+    "opciones": [
+      "Entrada",
+      "Actualización",
+      "Dibujo"
+    ],
+    "respuestaCorrecta": 1,
+    "explicacion": "La actualización cambia el estado. El dibujo lo representa."
+  },
+  {
+    "id": "historia",
+    "titulo": "Cómo leer una fuente histórica",
+    "tema": "Historia",
+    "area": "Cultura general",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "Una carta de la época que estudias es una fuente primaria para investigar qué dijo su autor.\n\nEmpieza por preguntar quién la escribió, cuándo y para quién. Después distingue lo que la carta muestra directamente de lo que puedes inferir. Para comprobar una interpretación, compárala con otras fuentes del mismo periodo.\n\nConsidera una carta que el autor nunca envió y otra que publicó en un diario. Pregúntate cómo el público previsto pudo influir en lo que decidió contar y lo que prefirió omitir.",
+    "ejemploVisual": "Autor → Destinatario\n Fecha → Contexto\n Texto → Evidencia",
+    "pregunta": "¿Qué conviene comprobar primero al leer una carta histórica?",
+    "opciones": [
+      "Autor, fecha y destinatario",
+      "Cantidad de palabras",
+      "Color del papel"
+    ],
+    "respuestaCorrecta": 0,
+    "explicacion": "La procedencia y el público ayudan a interpretar el mensaje."
+  },
+  {
+    "id": "encuadres",
+    "titulo": "Planos y encuadres en cine",
+    "tema": "Cine",
+    "area": "Cultura general",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "Un plano general presenta el entorno y ubica a los personajes.\n\nUn primer plano acerca el rostro y hace visible su expresión. Combinar ambos permite pasar del contexto a la reacción de una persona. Observa una escena sin sonido y anota qué información te entrega cada cambio de plano.\n\nEncuadra un objeto desde lejos y después acércate. En cada toma, anota qué se entiende sobre el espacio y qué detalles ganan importancia al acercar la cámara.",
+    "ejemploVisual": "Plano general → lugar\nPrimer plano  → reacción",
+    "pregunta": "¿Qué plano muestra mejor una expresión facial?",
+    "opciones": [
+      "General",
+      "Primer plano",
+      "Gran plano general"
+    ],
+    "respuestaCorrecta": 1,
+    "explicacion": "El primer plano reduce el espacio alrededor del rostro."
+  },
+  {
+    "id": "pulso",
+    "titulo": "Pulso, ritmo y compás",
+    "tema": "Música",
+    "area": "Cultura general",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "El pulso es la referencia regular que puedes marcar con el pie.\n\nEl ritmo organiza sonidos y silencios sobre esa referencia. El compás agrupa los pulsos y ayuda a reconocer dónde suele caer el acento. Marca cuatro pulsos iguales y aplaude solo en el primero y en el tercero: el pulso continúa incluso cuando no aplaudes.\n\nPrueba a cambiar los aplausos. Da dos entre el primer y el segundo pulso y guarda silencio en el tercero. El ritmo cambia mientras los pasos mantienen la referencia.",
+    "ejemploVisual": "Pulso:  1   2   3   4\nPalmas: X   −   X   −",
+    "pregunta": "¿Qué sigue siendo regular aunque cambien las palmas?",
+    "opciones": [
+      "El pulso",
+      "El silencio",
+      "La intensidad"
+    ],
+    "respuestaCorrecta": 0,
+    "explicacion": "El pulso mantiene la referencia temporal."
+  },
+  {
+    "id": "argumentos",
+    "titulo": "Premisas y conclusiones",
+    "tema": "Filosofía",
+    "area": "Cultura general",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "Una premisa ofrece una razón para sostener una conclusión.\n\nEn el argumento «todas las aves tienen plumas, el colibrí es un ave, por lo tanto tiene plumas», las dos primeras afirmaciones son premisas. La última es la conclusión. Para evaluar un argumento, pregunta si las premisas son aceptables y si apoyan la conclusión.\n\nIdentifica qué afirmación tendría que defender la persona que habla. Después busca las razones que la respaldan. Reordena el argumento si la conclusión aparece al principio.",
+    "ejemploVisual": "Todas las aves tienen plumas.\nEl colibrí es un ave.\n∴ El colibrí tiene plumas.",
+    "pregunta": "¿Cuál es la conclusión del ejemplo?",
+    "opciones": [
+      "El colibrí es un ave",
+      "Todas las aves tienen plumas",
+      "El colibrí tiene plumas"
+    ],
+    "respuestaCorrecta": 2,
+    "explicacion": "La conclusión es lo que las otras afirmaciones pretenden demostrar."
+  },
+  {
+    "id": "piloto",
+    "titulo": "Cómo se construye un episodio piloto",
+    "tema": "Series",
+    "area": "Cultura general",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "Un episodio piloto presenta el mundo, el personaje principal y el tipo de conflicto que puede sostener la serie.\n\nUna escena inicial puede mostrar qué quiere el personaje. El conflicto principal complica ese objetivo. El cierre puede resolver un problema pequeño y dejar abierta una pregunta que motive el siguiente episodio.\n\nEscribe en una frase el objetivo del personaje y en otra el obstáculo. Identifica algo que se pueda resolver al final del episodio y algo que pueda desarrollarse durante la temporada.",
+    "ejemploVisual": "Presentación → Conflicto → Cierre\n                                  ↓\n                          Pregunta abierta",
+    "pregunta": "¿Qué pregunta ayuda a evaluar si el piloto sostiene una serie?",
+    "opciones": [
+      "¿Cuántos créditos tiene?",
+      "¿Qué conflicto puede continuar?",
+      "¿Cuántos minutos duran los anuncios?"
+    ],
+    "respuestaCorrecta": 1,
+    "explicacion": "Un conflicto que pueda desarrollarse sostiene episodios posteriores."
+  },
+  {
+    "id": "giro-balon",
+    "titulo": "Por qué se curva un balón",
+    "tema": "Deportes",
+    "area": "Ciencias",
+    "nivel": "Inicial",
+    "minutos": 3,
+    "destacada": false,
+    "texto": "Al patear un balón fuera de su centro, el contacto puede darle giro además de velocidad. En el aire, el giro cambia cómo fluye el aire alrededor del balón.\n\nEl aire puede ejercer una fuerza lateral, conocida como efecto Magnus. Esa fuerza modifica la trayectoria mientras el balón avanza. En un tiro con efecto no basta con señalar hacia dónde sale el balón: importa también el sentido de su giro.\n\nImagina dos tiros iguales salvo por el giro. Dibuja una línea casi recta para el primero y una curva para el segundo. Usa una flecha lateral para representar cómo cambia la trayectoria.",
+    "ejemploVisual": "Sin efecto → ─────────\nCon efecto → ─────╮\n                   ╰→",
+    "pregunta": "¿Qué cambio hace posible que el balón se desvíe lateralmente por el efecto Magnus?",
+    "opciones": [
+      "El giro del balón",
+      "El color del balón",
+      "La altura de la portería"
+    ],
+    "respuestaCorrecta": 0,
+    "explicacion": "El giro altera el flujo de aire y produce una fuerza lateral sobre el balón."
+  }
+]
